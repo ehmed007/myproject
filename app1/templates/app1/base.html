@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="{% static 'app1/css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'app1/css/style.css' %}">
     
+    <script>
+      $(function () {
+        $("#datetimepicker1").datetimepicker({
+          format: 'DD/MM/YYYY HH:mm',
+        });
+      });
+    </script>
+
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 1.75cm;" >

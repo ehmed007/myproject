@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
 from django.contrib.auth import authenticate, login as do_login, logout as do_logout
-from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
-from .forms import signup_form,login_form
+from .forms import signup_form,login_form, addevent_form
 from django.contrib import messages
+
 # Create your views here.
 
 
@@ -23,6 +23,10 @@ def about(request):
 
 def dashboard(request):
     return render(request, 'app1/dashboard.html')
+
+def addevent(request):
+    form = addevent_form()
+    return render(request, 'app1/addevent.html',{'form':form})
 
 def logout(request):
     if request.user.is_authenticated:
